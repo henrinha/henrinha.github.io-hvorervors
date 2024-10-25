@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <link rel="stylesheet"
-        href="style.css">
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Hvor er vorset?</title>
     <!-- Legg til Google Fonts for bedre typografi -->
@@ -19,9 +18,32 @@
     </header>
     <!-- Hero-seksjon -->
     <section class="hero" id="home">
-        <h1>Hvor er vorset?</h1>
-        <p>Lei av å lure på hvor helgens vors er? Vi har oversikten!</p>
-        <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
+        <!-- Fjernet img-taggen og legger bildet som bakgrunn i CSS -->
+        <div class="hero-content">
+            <h1>Åpent hus hos Martin i dag!</h1>
+            <p>Martin har gleden av å invitere til 3-rettters middag i sin leilighet i dag.</p>
+            <p>Håper alle kan komme! Inviter alle du kjenner.</p>
+            <p>Adresse: Daniel Hansens Gate 12A, tlf 919 99 088</p>
+            <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
+        </div>
+    </section>
+    <!-- Plan-seksjon -->
+    <section class="plan" id="plan">
+        <h2>Plan for kvelden</h2>
+        <ul>
+            <li>18:00 - Ankomst og velkomstdrink</li>
+            <li>19:00 - Forrett: Carpaccio</li>
+            <li>20:00 - Hovedrett: Biff med tilbehør</li>
+            <li>21:00 - Dessert: Sjokolademousse</li>
+            <li>22:00 - Underholdning og mingling</li>
+            <li>23:00 - Overaskelse fra verten</li>
+            <li>04:00 - Nach med Ludvig</li>
+        </ul>
+    </section>
+    <!-- Ny bilde-seksjon -->
+    <section class="image-section">
+        <h2>Gleder meg til å se alle mine venner!</h2>
+        <img src="bilde.jpg" alt="Beskrivelse av bildet">
     </section>
     <!-- Event-seksjon -->
     <section class="events" id="events">
