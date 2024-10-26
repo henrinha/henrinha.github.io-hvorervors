@@ -32,6 +32,23 @@
         const analytics = firebase.analytics();
     </script>
 </head>
+<script>
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            // Scroll down - hide the header
+            header.style.top = "-80px";
+        } else {
+            // Scroll up - show the header
+            header.style.top = "0";
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
+
 <body>
     <!-- Navigation Menu -->
     <header>
@@ -69,11 +86,17 @@
         <h2>Chat</h2>
         <div id="chat-container">
             <div id="messages"></div>
+            
             <form id="message-form">
-                <input type="text" id="nickname-input" placeholder="Ditt kallenavn" required autocomplete="off">
-                <input type="text" id="message-input" placeholder="Skriv en melding..." required autocomplete="off">
-                <button type="submit">Send</button>
+                <div class="input-group">
+                    <input type="text" id="nickname-input" placeholder="Ditt kallenavn" required autocomplete="off">
+                    <input type="text" id="message-input" placeholder="Skriv en melding..." required autocomplete="off">
+                    <button type="submit">Send</button>
+                </div>
             </form>
+            
+
+
         </div>
     </section>
      <!-- Gallery Section -->
