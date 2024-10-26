@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Hvor er vorset?</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Legg til Google Fonts for bedre typografi -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
+    <script>
+        // Firebase-konfigurasjonsobjekt
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRzLIVCn4C-Att3w5B94M_tUncLFs-o6E",
+            authDomain: "hvorervors.firebaseapp.com",
+            projectId: "hvorervors",
+            storageBucket: "hvorervors.appspot.com",
+            messagingSenderId: "515878760173",
+            appId: "1:515878760173:web:0c62da6c186c7514b7e6e4",
+            measurementId: "G-M7P2NZFVR4"
+        };
+
+        // Initialiser Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const auth = firebase.auth();
+        const analytics = firebase.analytics();
+    </script>
 </head>
 <body>
     <!-- Navigasjonsmeny -->
     <header>
         <nav>
-            <a href="home.html">Hjem</a>
+            <a href="#home">Hjem</a>
             <a href="#events">Vorsside</a>
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
     <!-- Hero-seksjon -->
     <section class="hero" id="home">
-        <!-- Fjernet img-taggen og legger bildet som bakgrunn i CSS -->
         <div class="hero-content">
             <h1>Åpent hus hos Martin i dag!</h1>
-            <p>Martin har gleden av å invitere til 3-rettters middag i sin leilighet i dag.</p>
+            <p>Martin har gleden av å invitere til 3-retters middag i sin leilighet i dag.</p>
             <p>Håper alle kan komme! Inviter alle du kjenner.</p>
             <p>Adresse: Daniel Hansens Gate 12A, tlf 919 99 088</p>
             <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
@@ -36,11 +59,23 @@
             <li>20:00 - Hovedrett: Biff med tilbehør</li>
             <li>21:00 - Dessert: Sjokolademousse</li>
             <li>22:00 - Underholdning og mingling</li>
-            <li>23:00 - Overaskelse fra verten</li>
+            <li>23:00 - Overraskelse fra verten</li>
             <li>04:00 - Nach med Ludvig</li>
         </ul>
     </section>
-    <!-- Ny bilde-seksjon -->
+    <!-- Diskusjonsforum-seksjon -->
+    <section class="discussion" id="discussion">
+        <h2>Chat</h2>
+        <div id="chat-container">
+            <div id="messages"></div>
+            <form id="message-form">
+                <input type="text" id="nickname-input" placeholder="Ditt kallenavn" required autocomplete="off">
+                <input type="text" id="message-input" placeholder="Skriv en melding..." required autocomplete="off">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <!-- Bilde-seksjon -->
     <section class="image-section">
         <h2>Gleder meg til å se alle mine venner!</h2>
         <img src="bilde.jpg" alt="Beskrivelse av bildet">
@@ -69,5 +104,7 @@
         <p>Følg oss på sosiale medier:</p>
         <!-- Legg til sosiale medier ikoner -->
     </footer>
+    <!-- Legg til skript for diskusjonsforumet -->
+    <script src="discussion.js"></script>
 </body>
 </html>
