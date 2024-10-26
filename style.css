@@ -126,15 +126,15 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
-    max-width: 70%;
-    padding: 15px 20px;
+    max-width: 90%; /* Økt fra 70% */
+    padding: 20px 25px; /* Økt padding */
     border-radius: 20px;
     position: relative;
     word-wrap: break-word;
 }
 .my-message {
     align-self: flex-end;
-    background-color: #0084ff;
+    background-color: #0084ff; /* Messenger blå */
     color: #fff;
     border-bottom-right-radius: 5px;
 }
@@ -150,8 +150,8 @@ nav a:hover {
     color: #365899;
 }
 .message-text {
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 18px; /* Økt fra 16px */
+    line-height: 1.6;
 }
 #message-form {
     display: flex;
@@ -288,10 +288,10 @@ footer a {
     /* Diskusjonsforum */
     .message {
         max-width: 100%;
-        padding: 12px 15px;
+        padding: 15px 20px;
     }
     .message-text {
-        font-size: 16px;
+        font-size: 18px;
     }
     #messages {
         padding: 15px;
@@ -333,7 +333,7 @@ footer a {
 
     /* Diskusjonsforum */
     .message-text {
-        font-size: 14px;
+        font-size: 16px;
     }
     #message-form input, #message-form button {
         padding: 10px;
