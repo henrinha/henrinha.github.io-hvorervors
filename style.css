@@ -1,4 +1,4 @@
-/* Generelle stiler */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background: #f0f0f0;
@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Navigasjonsmeny */
+/* Navigation Menu */
 header {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px 0;
@@ -33,7 +33,7 @@ nav a:hover {
     color: #ffd700;
 }
 
-/* Hero-seksjon */
+/* Hero Section */
 .hero {
     position: relative;
     height: 100vh;
@@ -80,7 +80,7 @@ nav a:hover {
     background: #ffa500;
 }
 
-/* Plan-seksjon */
+/* Plan Section */
 .plan {
     padding: 80px 20px;
     background: #f9f9f9;
@@ -100,7 +100,7 @@ nav a:hover {
     margin: 15px 0;
 }
 
-/* Diskusjonsforum-stil */
+/* Discussion Forum Styles */
 .discussion {
     padding: 40px 20px;
     background-color: #f0f2f5;
@@ -179,7 +179,7 @@ nav a:hover {
     background-color: #006bbf;
 }
 
-/* Bilde-seksjon */
+/* Image Section */
 .image-section {
     padding: 50px 20px;
     text-align: center;
@@ -197,7 +197,7 @@ nav a:hover {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-/* Event-seksjon */
+/* Event Section */
 .events {
     padding: 100px 20px;
     background: #fff;
@@ -245,7 +245,7 @@ footer a {
     text-decoration: none;
 }
 
-/* Galleri-seksjon */
+/* Gallery Section */
 .gallery-section {
     padding: 50px 20px;
     background-color: #f9f9f9;
@@ -269,20 +269,93 @@ footer a {
 
 .gallery-container img {
     width: 100%;
-    height: auto;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-container img:hover {
     transform: scale(1.05);
 }
 
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1001; /* Higher than the header */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Black with opacity */
+}
 
-/* Responsiv design */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#lightbox-caption {
+    color: #ccc;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: 60px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.lightbox .close:hover,
+.lightbox .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.lightbox .prev,
+.lightbox .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 40px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.lightbox .prev {
+    left: 0;
+}
+
+.lightbox .next {
+    right: 0;
+}
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Navigasjonsmeny */
+    /* Navigation Menu */
     nav {
         flex-direction: column;
         align-items: center;
@@ -292,7 +365,7 @@ footer a {
         font-size: 1em;
     }
 
-    /* Hero-seksjon */
+    /* Hero Section */
     .hero h1 {
         font-size: 2.5em;
     }
@@ -300,7 +373,7 @@ footer a {
         font-size: 1.2em;
     }
 
-    /* Plan-seksjon */
+    /* Plan Section */
     .plan h2 {
         font-size: 2em;
     }
@@ -308,7 +381,7 @@ footer a {
         font-size: 1.2em;
     }
 
-    /* Event-seksjon */
+    /* Event Section */
     .events h2 {
         font-size: 2.5em;
     }
@@ -320,7 +393,7 @@ footer a {
         width: 80%;
     }
 
-    /* Diskusjonsforum */
+    /* Discussion Forum */
     .message {
         max-width: 90%;
         padding: 12px 18px;
@@ -335,10 +408,18 @@ footer a {
         padding: 12px;
         font-size: 14px;
     }
+
+    /* Gallery Adjustments */
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .gallery-container img {
+        height: 150px;
+    }
 }
 
 @media (max-width: 480px) {
-    /* Hero-seksjon */
+    /* Hero Section */
     .hero h1 {
         font-size: 2em;
     }
@@ -350,7 +431,7 @@ footer a {
         font-size: 1em;
     }
 
-    /* Plan-seksjon */
+    /* Plan Section */
     .plan h2 {
         font-size: 1.8em;
     }
@@ -358,7 +439,7 @@ footer a {
         font-size: 1em;
     }
 
-    /* Event-seksjon */
+    /* Event Section */
     .event-info h3 {
         font-size: 1.5em;
     }
@@ -366,7 +447,7 @@ footer a {
         font-size: 0.9em;
     }
 
-    /* Diskusjonsforum */
+    /* Discussion Forum */
     .message {
         max-width: 100%;
         padding: 10px 15px;
@@ -384,5 +465,13 @@ footer a {
     #message-form input, #message-form button {
         padding: 10px;
         font-size: 13px;
+    }
+
+    /* Gallery Adjustments */
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    .gallery-container img {
+        height: 200px; /* Maintain a reasonable height on small screens */
     }
 }

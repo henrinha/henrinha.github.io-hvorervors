@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hvor er vorset?</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Legg til Google Fonts for bedre typografi -->
+    <!-- Google Fonts for better typography -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
 
     <!-- Firebase SDKs -->
@@ -14,9 +14,9 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics-compat.js"></script>
     <script>
-        // Firebase-konfigurasjonsobjekt
+        // Firebase configuration object
         const firebaseConfig = {
-            apiKey: "API_KEY_HER",
+            apiKey: "API_KEY_HERE",
             authDomain: "hvorervors.firebaseapp.com",
             projectId: "hvorervors",
             storageBucket: "hvorervors.appspot.com",
@@ -25,7 +25,7 @@
             measurementId: "G-M7P2NZFVR4"
         };
 
-        // Initialiser Firebase
+        // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
         const auth = firebase.auth();
@@ -33,7 +33,7 @@
     </script>
 </head>
 <body>
-    <!-- Navigasjonsmeny -->
+    <!-- Navigation Menu -->
     <header>
         <nav>
             <a href="#home">Hjem</a>
@@ -41,7 +41,7 @@
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
-    <!-- Hero-seksjon -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Åpent hus hos Martin i dag!</h1>
@@ -51,7 +51,7 @@
             <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
         </div>
     </section>
-    <!-- Plan-seksjon -->
+    <!-- Plan Section -->
     <section class="plan" id="plan">
         <h2>Plan for kvelden</h2>
         <ul>
@@ -64,7 +64,7 @@
             <li>04:00 - Nach med Ludvig</li>
         </ul>
     </section>
-    <!-- Diskusjonsforum-seksjon -->
+    <!-- Discussion Forum Section -->
     <section class="discussion" id="discussion">
         <h2>Chat</h2>
         <div id="chat-container">
@@ -76,12 +76,12 @@
             </form>
         </div>
     </section>
-    <!-- Bilde-seksjon -->
+    <!-- Image Section -->
     <section class="image-section">
         <h2>Gleder meg til å se alle mine venner!</h2>
         <img src="bilde.jpg" alt="Beskrivelse av bildet">
     </section>
-    <!-- Event-seksjon -->
+    <!-- Event Section -->
     <section class="events" id="events">
         <h2>Kommende Eventer</h2>
         <div class="event-container">
@@ -99,25 +99,34 @@
             </div>
         </div>
     </section>
-    <!-- Galleri-seksjon for ekstra bilder -->
+    <!-- Gallery Section -->
     <section class="gallery-section">
         <h2>Galleri</h2>
         <div class="gallery-container">
-            <img src="theo.jpg" alt="Bilde 4670">
-            <img src="IMG_4670.jpg" alt="Bilde 4670">
-            <img src="IMG_4672.jpg" alt="Bilde 4672">
-            <img src="IMG_4673.jpg" alt="Bilde 4673">
-            <img src="IMG_4674.jpg" alt="Bilde 4674">
-            <img src="IMG_4675.jpg" alt="Bilde 4675">
+            <img src="theo.jpg" alt="Bilde 1" data-index="0">
+            <img src="IMG_4670.jpg" alt="Bilde 2" data-index="1">
+            <img src="IMG_4672.jpg" alt="Bilde 3" data-index="2">
+            <img src="IMG_4673.jpg" alt="Bilde 4" data-index="3">
+            <img src="IMG_4674.jpg" alt="Bilde 5" data-index="4">
+            <img src="IMG_4675.jpg" alt="Bilde 6" data-index="5">
         </div>
     </section>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
     <!-- Footer -->
     <footer id="contact">
         <p>Kontakt oss på <a href="mailto:kontakt@vors.no">ola@ola.no</a></p>
         <p>Følg oss på sosiale medier:</p>
-        <!-- Legg til sosiale medier ikoner -->
+        <!-- Add social media icons if needed -->
     </footer>
-    <!-- Legg til skript for diskusjonsforumet -->
+    <!-- Include JavaScript Files -->
     <script src="discussion.js"></script>
+    <script src="lightbox.js"></script>
 </body>
 </html>
