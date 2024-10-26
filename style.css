@@ -245,8 +245,13 @@ footer a {
     text-decoration: none;
 }
 
-/* Responsiv design */
-@media (max-width: 768px) {
+/* Mobiltelefon-seksjon */
+@media (max-width: 600px) {
+    /* Generelle stiler */
+    body {
+        font-size: 16px;
+    }
+
     /* Navigasjonsmeny */
     nav {
         flex-direction: column;
@@ -258,11 +263,18 @@ footer a {
     }
 
     /* Hero-seksjon */
+    .hero {
+        padding: 0 15px;
+    }
     .hero h1 {
         font-size: 2.5em;
     }
     .hero p {
         font-size: 1.2em;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
     /* Plan-seksjon */
@@ -282,27 +294,39 @@ footer a {
         align-items: center;
     }
     .event-info {
-        width: 80%;
+        width: 90%;
+        margin: 15px 0;
+    }
+    .event-info h3 {
+        font-size: 1.8em;
+    }
+    .event-info p {
+        font-size: 1em;
     }
 
     /* Diskusjonsforum */
-    .message {
+    #chat-container {
         max-width: 100%;
-        padding: 15px 20px;
-    }
-    .message-text {
-        font-size: 18px;
+        margin: 10px auto;
     }
     #messages {
         padding: 15px;
     }
+    .message {
+        max-width: 100%;
+        padding: 20px;
+    }
+    .message-text {
+        font-size: 18px;
+    }
     #message-form input, #message-form button {
-        padding: 12px;
-        font-size: 14px;
+        padding: 15px;
+        font-size: 16px;
     }
 }
 
-@media (max-width: 480px) {
+/* Ekstra små skjermer */
+@media (max-width: 400px) {
     /* Hero-seksjon */
     .hero h1 {
         font-size: 2em;
@@ -311,8 +335,8 @@ footer a {
         font-size: 1em;
     }
     .btn {
-        padding: 12px 25px;
-        font-size: 1em;
+        padding: 10px 20px;
+        font-size: 0.9em;
     }
 
     /* Plan-seksjon */
@@ -324,6 +348,9 @@ footer a {
     }
 
     /* Event-seksjon */
+    .events h2 {
+        font-size: 2em;
+    }
     .event-info h3 {
         font-size: 1.5em;
     }
@@ -336,7 +363,7 @@ footer a {
         font-size: 16px;
     }
     #message-form input, #message-form button {
-        padding: 10px;
-        font-size: 12px;
+        padding: 12px;
+        font-size: 14px;
     }
 }
