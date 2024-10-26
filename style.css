@@ -126,15 +126,15 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
-    max-width: 90%; /* Økt fra 70% */
-    padding: 20px 25px; /* Økt padding */
+    max-width: 70%;
+    padding: 15px 20px;
     border-radius: 20px;
     position: relative;
     word-wrap: break-word;
 }
 .my-message {
     align-self: flex-end;
-    background-color: #0084ff; /* Messenger blå */
+    background-color: #0084ff;
     color: #fff;
     border-bottom-right-radius: 5px;
 }
@@ -150,8 +150,8 @@ nav a:hover {
     color: #365899;
 }
 .message-text {
-    font-size: 18px; /* Økt fra 16px */
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.5;
 }
 #message-form {
     display: flex;
@@ -245,13 +245,8 @@ footer a {
     text-decoration: none;
 }
 
-/* Mobiltelefon-seksjon */
-@media (max-width: 600px) {
-    /* Generelle stiler */
-    body {
-        font-size: 16px;
-    }
-
+/* Responsiv design */
+@media (max-width: 768px) {
     /* Navigasjonsmeny */
     nav {
         flex-direction: column;
@@ -263,18 +258,11 @@ footer a {
     }
 
     /* Hero-seksjon */
-    .hero {
-        padding: 0 15px;
-    }
     .hero h1 {
         font-size: 2.5em;
     }
     .hero p {
         font-size: 1.2em;
-    }
-    .btn {
-        padding: 12px 25px;
-        font-size: 1em;
     }
 
     /* Plan-seksjon */
@@ -294,39 +282,27 @@ footer a {
         align-items: center;
     }
     .event-info {
-        width: 90%;
-        margin: 15px 0;
-    }
-    .event-info h3 {
-        font-size: 1.8em;
-    }
-    .event-info p {
-        font-size: 1em;
+        width: 80%;
     }
 
     /* Diskusjonsforum */
-    #chat-container {
-        max-width: 100%;
-        margin: 10px auto;
+    .message {
+        max-width: 90%;
+        padding: 12px 18px;
+    }
+    .message-text {
+        font-size: 16px;
     }
     #messages {
         padding: 15px;
     }
-    .message {
-        max-width: 100%;
-        padding: 20px;
-    }
-    .message-text {
-        font-size: 18px;
-    }
     #message-form input, #message-form button {
-        padding: 15px;
-        font-size: 16px;
+        padding: 12px;
+        font-size: 14px;
     }
 }
 
-/* Ekstra små skjermer */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     /* Hero-seksjon */
     .hero h1 {
         font-size: 2em;
@@ -335,8 +311,8 @@ footer a {
         font-size: 1em;
     }
     .btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
+        padding: 12px 25px;
+        font-size: 1em;
     }
 
     /* Plan-seksjon */
@@ -348,9 +324,6 @@ footer a {
     }
 
     /* Event-seksjon */
-    .events h2 {
-        font-size: 2em;
-    }
     .event-info h3 {
         font-size: 1.5em;
     }
@@ -359,11 +332,22 @@ footer a {
     }
 
     /* Diskusjonsforum */
+    .message {
+        max-width: 100%;
+        padding: 10px 15px;
+        margin-bottom: 15px;
+    }
+    .message-header {
+        font-size: 12px;
+    }
     .message-text {
-        font-size: 16px;
+        font-size: 14px;
+    }
+    #messages {
+        padding: 10px;
     }
     #message-form input, #message-form button {
-        padding: 12px;
-        font-size: 14px;
+        padding: 10px;
+        font-size: 13px;
     }
 }
