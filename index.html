@@ -6,27 +6,60 @@
     <title>Hvor er vorset?</title>
     <!-- Legg til Google Fonts for bedre typografi -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700&display=swap" rel="stylesheet">
+    <!-- Legg til JavaScript for nedtellingen -->
+    <script>
+        function startCountdown() {
+            var countDownDate = new Date("Dec 17, 2024 14:00:00").getTime();
+
+            var x = setInterval(function() {
+
+                var now = new Date().getTime();
+
+                var distance = countDownDate - now;
+
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "Eventet har startet!";
+                } else {
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    var hundredths = Math.floor((distance % 1000) / 10);
+
+                    document.getElementById("countdown").innerHTML = days + "d " + hours + "t "
+                    + minutes + "m " + seconds + "s " + hundredths + "cs";
+                }
+            }, 10); // Oppdater hvert 10. millisekund
+
+            function pornHub() {
+
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="startCountdown()">
     <!-- Navigasjonsmeny -->
     <header>
         <nav>
-            <a href="home.html">Hjem</a>
+            <a href="https://it.pornhub.com">Hjem</a>
             <a href="#events">Vorsside</a>
             <a href="#contact">Kontakt</a>
         </nav>
     </header>
     <!-- Hero-seksjon -->
-    <section class="hero" id="home">
-        <!-- Fjernet img-taggen og legger bildet som bakgrunn i CSS -->
+    <section class="hero" id="home" onclick="www.finn.no">
         <div class="hero-content">
             <h1>War is over - Sterk gløgg i Thomas Angells gate 19</h1>
-            <p>17. desember. Be there og be square.</p>
+            <p>17. desember kl. 14:00. Be there og be square.</p>
             <p>Planen er å drikke mye, ikke snakke så mye. Drikke i stillhet sammen.</p>
             <p>Død over matte!</p>
+            <h2>Nedtelling til 17. desember kl. 14:00:</h2>
+            <div id="countdown" style="font-size: 2em; font-weight: bold;"></div>
             <button class="btn" onclick="window.location.href='#events'">Se Eventer</button>
         </div>
     </section>
+    <!-- Resten av siden -->
     <!-- Plan-seksjon -->
     <section class="plan" id="plan">
         <h2>Plan for kvelden</h2>
@@ -38,7 +71,7 @@
             <li>23:00 - Avslutning med felles taus skål</li>
         </ul>
     </section>
-    <!-- Ny bilde-seksjon -->
+    <!-- Bilde-seksjon -->
     <section class="image-section">
         <h2>Gjør deg klar for en kveld uten ord, men med mye gløgg!</h2>
         <img src="bilde.jpg" alt="Bilde av gløggfest">
